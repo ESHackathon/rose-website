@@ -14,9 +14,9 @@ import router from './router'
 Vue.use(VueAxios, axios)
 Vue.axios.defaults.baseURL = process.env.API_URL || 'http://localhost:5000'
 Vue.use(Vuetify, { theme: {
-  primary: '#1976d2',
-  secondary: '#63a4ff',
-  accent: '#004ba0',
+  primary: '#c39204',
+  secondary: '#fac245',
+  accent: '#8e6500',
   error: '#FF5252',
   info: '#2196F3',
   success: '#4CAF50',

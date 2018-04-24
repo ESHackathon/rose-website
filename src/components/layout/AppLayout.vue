@@ -11,18 +11,18 @@
         </v-layout>
         <v-layout row>
           <v-flex sm12 md8 offset-md2>
-            <v-toolbar color="primary" dark>
+            <v-toolbar color="primary">
               <v-toolbar-side-icon class="show-md-and-up"></v-toolbar-side-icon>
               <v-spacer></v-spacer>
               <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn flat>Home</v-btn>
-                <v-btn flat>About</v-btn>
-                <v-btn flat>Forms</v-btn>
+                <v-btn flat :to="{name: 'home'}">Home</v-btn>
+                <v-btn flat :to="{name: 'about'}">About</v-btn>
+                <v-btn flat :to="{name: 'systematicReviewProtocol'}">Forms</v-btn>
                 <v-btn flat>Publications</v-btn>
                 <v-btn flat>Editors & Journals</v-btn>
                 <v-btn flat>Contact Us</v-btn>
                 <v-menu :nudge-width="100">
-                  <v-btn icon slot="activator">
+                  <v-btn flat icon slot="activator">
                     <v-icon>more_vert</v-icon>
                   </v-btn>
                   <v-list>
@@ -41,7 +41,7 @@
             </v-toolbar>
           </v-flex>
         </v-layout>
-        <router-view />
+        <router-view></router-view>
       </v-container>
     </v-content>
     <v-footer class="pa-3">

@@ -160,7 +160,7 @@
   import download from 'downloadjs'
 
   export default {
-    name: 'systematic-review-protocol',
+    name: 'SystematicReviewProtocol',
     data () {
       return {
         message: 'Hi Vue!',

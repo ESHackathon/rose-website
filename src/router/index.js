@@ -2,37 +2,41 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import AppLayout from '../components/layout/AppLayout'
-import SystematicReviewProtocol from '../components/forms/SystematicReviewProtocol'
-
-// Error Layouts and Views.
-import ErrorLayout from '../components/errors/layout/ErrorLayout'
-import NotFound from '../components/errors/views/NotFound'
+import About from '../components/pages/About'
+import Forms from '../components/pages/Forms'
+import Home from '../components/pages/Home'
+import SystematicReviewProtocol from '../components/pages/SystematicReviewProtocol'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '',
       component: AppLayout,
-      redirect: '/oops/not-found',
+      redirect: '/home',
       children: [
         {
-          path: '/oops',
-          component: ErrorLayout,
-          redirect: '/not-found',
-          children: [
-            {
-              path: 'not-found',
-              name: 'NotFound',
-              component: NotFound
-            }
-          ]
+          path: '/home',
+          name: 'home',
+          component: Home
         },
         {
-          path: '',
-          name: 'Home',
-          component: SystematicReviewProtocol
+          path: '/about',
+          name: 'about',
+          component: About
+        },
+        {
+          path: '/forms',
+          name: 'forms',
+          component: Forms,
+          children: [
+            {
+              path: 'systematic-review-protocol',
+              name: 'systematicReviewProtocol',
+              component: SystematicReviewProtocol
+            }
+          ]
         }
       ]
     }
