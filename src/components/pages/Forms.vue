@@ -31,7 +31,13 @@
           flat
           :to="{name: 'systematicReviewProtocol'}"
         >
-          <v-icon>assignment</v-icon> ROSES for Systematic review protocols
+          <v-icon>assignment</v-icon> ROSES for Systematic Review protocols
+        </v-btn>
+        <v-btn
+          flat
+          :to="{name: 'systematicMapProtocol'}"
+        >
+          <v-icon>assignment</v-icon> ROSES for Systematic Map Protocols
         </v-btn>
       </v-flex>
     </v-layout>

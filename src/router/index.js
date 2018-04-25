@@ -8,6 +8,7 @@ import Forms from '../components/pages/Forms'
 import Publications from '../components/pages/Publications'
 import Home from '../components/pages/Home'
 import SystematicReviewProtocol from '../components/pages/SystematicReviewProtocol'
+import SystematicMapProtocol from '../components/pages/SystematicMapProtocol'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
               path: 'systematic-review-protocol',
               name: 'systematicReviewProtocol',
               component: SystematicReviewProtocol
+            },
+            {
+              path: 'systematic-map-protocol',
+              name: 'systematicMapProtocol',
+              component: SystematicMapProtocol
             }
           ]
         }

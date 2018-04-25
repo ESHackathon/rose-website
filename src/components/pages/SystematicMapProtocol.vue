@@ -1,7 +1,7 @@
 <template>
   <v-layout row>
     <v-flex sm12 md8 offset-md2>
-      <h3 class="display-3">Systematic Review Protocol</h3>
+      <h3 class="display-3">Systematic Map Protocol</h3>
       <v-divider class="my-3"></v-divider>
       <v-stepper v-model="e6" vertical>
         <v-stepper-step step="1" :complete="e6 > 1">
