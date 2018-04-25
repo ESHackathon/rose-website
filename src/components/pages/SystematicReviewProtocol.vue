@@ -194,8 +194,8 @@
             <v-text-field
               label="Bibliographic Databases"
               v-model="searches.bibliographicDatabases"
-              mask="##"
-              placeholder="Type a two digits number"
+              mask="###"
+              placeholder="Type a number"
               :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
@@ -207,8 +207,8 @@
             <v-text-field
               label="Web – Based Search Engines"
               v-model="searches.webSearchEngines"
-              mask="##"
-              placeholder="Type a two digits number"
+              mask="###"
+              placeholder="Type a number"
               :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
@@ -220,8 +220,8 @@
             <v-text-field
               label="Organisational Websites"
               v-model="searches.organisationalWebsites"
-              mask="##"
-              placeholder="Type a two digits number"
+              mask="###"
+              placeholder="Type a number"
               :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
@@ -408,12 +408,13 @@
           <h3 class="display3">Type of Synthesis</h3>
           <p>State the type of synthesis conducted as part of the systematic review (narrative only, narrative and quantitative, narrative and qualitative, narrative, qualitative and quantitative, narrative and mixed-methods).</p>
           <v-form v-model="valid" ref="form" lazy-validation>
-            <v-text-field
-              label="Type of synthesis"
-              v-model="dataSynthesisAndPresentation.typeOfSynthesis"
-              :rules="[v => !!v || 'Item is required']"
-              required
-            ></v-text-field>
+            <v-select
+            label="Type of synthesis"
+            v-model="dataSynthesisAndPresentation.typeOfSynthesis"
+            :items="typeOfSynthesisOptions"
+            :rules="[v => !!v || 'Item is required']"
+            required
+          ></v-select>
           </v-form>
 
           <h3 class="display3">Narrative Synthesis Strategy</h3>
@@ -591,6 +592,12 @@
         declarations: {
           competingInterests: ''
         },
+        typeOfSynthesisOptions: [
+          'Narrative Only',
+          'Narrative and Quantitative',
+          'Narrative and Qualitative',
+          'Narrative and Mixed Methods'
+        ],
         typeOfReviewOptions: [
           'Systematic Review',
           'Systematic Review Update',
