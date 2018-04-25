@@ -2,7 +2,8 @@
   <div>
     <v-layout row>
       <v-flex sm12 md8 offset-md2>
-        <h1>Forms</h1>
+        <h3 class="display-3">Forms</h3>
+        <v-divider class="my-3"></v-divider>
         <p>
           Below you will find ROSES forms for systematic reviews and maps for protocols and
           final reports. You will also find the ROSES template for a flow diagram showing

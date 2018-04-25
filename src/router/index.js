@@ -5,6 +5,7 @@ import AppLayout from '../components/layout/AppLayout'
 import FormsLayout from '../components/layout/FormsLayout'
 import About from '../components/pages/About'
 import Forms from '../components/pages/Forms'
+import Publications from '../components/pages/Publications'
 import Home from '../components/pages/Home'
 import SystematicReviewProtocol from '../components/pages/SystematicReviewProtocol'
 
@@ -26,6 +27,11 @@ export default new Router({
           path: '/about',
           name: 'about',
           component: About
+        },
+        {
+          path: '/publications',
+          name: 'publications',
+          component: Publications
         },
         {
           path: '/forms',
