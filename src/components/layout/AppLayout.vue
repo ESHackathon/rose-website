@@ -1,58 +1,45 @@
 <template>
-  <v-app>
-    <v-content>
-      <v-container fluid>
-        <v-layout row>
-          <v-flex sm12 md8 offset-md2>
-            <header>
-              <div class="logo"></div>
-            </header>
-          </v-flex>
-        </v-layout>
-        <v-layout row>
-          <v-flex sm12 md8 offset-md2>
-            <v-toolbar color="primary">
-              <v-toolbar-side-icon class="show-md-and-up"></v-toolbar-side-icon>
+  <div class="app">
+    <v-app>
+      <v-content>
+        <section>
+          <v-parallax src="/static/images/roses-photo-01.jpg">
+            <v-container>
+              <v-layout row wrap>
+                <v-flex xs12 class="logo">
+                  <img src="/static/images/roses-logo-white.png" alt="ROSES" height="120">
+                </v-flex>
+                <v-flex xs12>
+                  <app-nav></app-nav>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-parallax>
+        </section>
+      </v-content>
+      <router-view></router-view>
+      <v-content>
+        <v-footer class="pa-3">
+          <v-layout column align-center>
+            <v-flex xs12 md4>
+              <span>&copy; 2018 ROSES</span>
               <v-spacer></v-spacer>
-              <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn flat :to="{name: 'home'}">Home</v-btn>
-                <v-btn flat :to="{name: 'about'}">About</v-btn>
-                <v-btn flat :to="{name: 'forms'}">Forms</v-btn>
-                <v-btn flat :to="{name: 'publications'}">Publications</v-btn>
-                <v-btn flat :to="{name: 'editorsAndJournals'}">Editors & Journals</v-btn>
-                <v-btn flat>Contact Us</v-btn>
-                <v-menu :nudge-width="100">
-                  <v-btn flat icon slot="activator">
-                    <v-icon>more_vert</v-icon>
-                  </v-btn>
-                  <v-list>
-                    <v-list-tile>
-                      <v-list-tile-title>Useful Links</v-list-tile-title>
-                    </v-list-tile>
-                    <v-list-tile>
-                      <v-list-tile-title>Updates & Extensions</v-list-tile-title>
-                    </v-list-tile>
-                    <v-list-tile>
-                      <v-list-tile-title>Examples of Use</v-list-tile-title>
-                    </v-list-tile>
-                  </v-list>
-                </v-menu>
-              </v-toolbar-items>
-            </v-toolbar>
-          </v-flex>
-        </v-layout>
-        <router-view></router-view>
-      </v-container>
-    </v-content>
-    <v-footer class="pa-3">
-      <v-spacer></v-spacer>
-    </v-footer>
-  </v-app>
+            </v-flex>
+          </v-layout>
+        </v-footer>
+      </v-content>
+    </v-app>
+  </div>
 </template>
 
 <script>
+  import AppNav from '../components/AppNav'
+
   export default {
     name: 'app-layout',
+    components: {
+      AppNav
+    },
     data () {
       return { }
     },
@@ -62,14 +49,15 @@
 </script>
 
 <style lang="scss" scoped>
-  header {
-    margin: 0 0 20px 0;
+  .logo {
+    height: 436px;
+    position: relative;
 
-    div.logo {
-      background-image: url('/static/images/roses-logo.png');
-      background-size: cover;
-      width: 248px;
-      height: 120px;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 </style>
