@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import AppLayout from '../components/layout/AppLayout'
+import FormsLayout from '../components/layout/FormsLayout'
 import About from '../components/pages/About'
 import Forms from '../components/pages/Forms'
 import Home from '../components/pages/Home'
@@ -28,9 +29,13 @@ export default new Router({
         },
         {
           path: '/forms',
-          name: 'forms',
-          component: Forms,
+          component: FormsLayout,
           children: [
+            {
+              path: '',
+              name: 'forms',
+              component: Forms
+            },
             {
               path: 'systematic-review-protocol',
               name: 'systematicReviewProtocol',

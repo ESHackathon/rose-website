@@ -17,7 +17,7 @@
               <v-toolbar-items class="hidden-sm-and-down">
                 <v-btn flat :to="{name: 'home'}">Home</v-btn>
                 <v-btn flat :to="{name: 'about'}">About</v-btn>
-                <v-btn flat :to="{name: 'systematicReviewProtocol'}">Forms</v-btn>
+                <v-btn flat :to="{name: 'forms'}">Forms</v-btn>
                 <v-btn flat>Publications</v-btn>
                 <v-btn flat>Editors & Journals</v-btn>
                 <v-btn flat>Contact Us</v-btn>

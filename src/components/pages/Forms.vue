@@ -1,5 +1,40 @@
 <template>
-  <router-view></router-view>
+  <div>
+    <v-layout row>
+      <v-flex sm12 md8 offset-md2>
+        <h1>Forms</h1>
+        <p>
+          Below you will find ROSES forms for systematic reviews and maps for protocols and
+          final reports. You will also find the ROSES template for a flow diagram showing
+          how a systematic review or map has been conducted.
+        </p>
+        ​<p>
+          Systematic maps aim to summarise and describe the existing evidence on a topic,
+          whilst systematic reviews aim to pool together findings of individual studies to
+          examine an overall affect.
+        </p>
+        ​<p>
+          Protocols aim to set out the planned methods for a systematic review or map, and
+          are written before a review begins. This allows reviewers to receive feedback on their
+          methods (e.g. via the CEE journal Environmental Evidence).
+        </p>
+        ​<p>
+          All of the files below have DOIs (digital object identifiers) to make it easy to
+          find and cite them. See each file for details.
+        </p>
+      </v-flex>
+    </v-layout>
+    <v-layout row>
+      <v-flex sm12 md8 offset-md2>
+        <v-btn
+          flat
+          :to="{name: 'systematicReviewProtocol'}"
+        >
+          <v-icon>assignment</v-icon> ROSES for Systematic review protocols
+        </v-btn>
+      </v-flex>
+    </v-layout>
+  </div>
 </template>
 
 <script>
