@@ -12,7 +12,6 @@
             <a href="https://environmentalevidencejournal.biomedcentral.com/articles/10.1186/s13750-018-0121-7" target="_blank"> Read Publication </a>
           </v-list-tile-content>
         </v-list-tile>
-
       </v-list>
     </v-flex>
   </v-layout>

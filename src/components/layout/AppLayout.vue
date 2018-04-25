@@ -19,7 +19,7 @@
                 <v-btn flat :to="{name: 'about'}">About</v-btn>
                 <v-btn flat :to="{name: 'forms'}">Forms</v-btn>
                 <v-btn flat :to="{name: 'publications'}">Publications</v-btn>
-                <v-btn flat>Editors & Journals</v-btn>
+                <v-btn flat :to="{name: 'editorsAndJournals'}">Editors & Journals</v-btn>
                 <v-btn flat>Contact Us</v-btn>
                 <v-menu :nudge-width="100">
                   <v-btn flat icon slot="activator">

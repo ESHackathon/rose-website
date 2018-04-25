@@ -3,10 +3,11 @@ import Router from 'vue-router'
 
 import AppLayout from '../components/layout/AppLayout'
 import FormsLayout from '../components/layout/FormsLayout'
+import Home from '../components/pages/Home'
 import About from '../components/pages/About'
 import Forms from '../components/pages/Forms'
 import Publications from '../components/pages/Publications'
-import Home from '../components/pages/Home'
+import EditorsAndJournals from '../components/pages/EditorsAndJournals'
 import SystematicReviewProtocol from '../components/pages/SystematicReviewProtocol'
 import SystematicMapProtocol from '../components/pages/SystematicMapProtocol'
 
@@ -33,6 +34,11 @@ export default new Router({
           path: '/publications',
           name: 'publications',
           component: Publications
+        },
+        {
+          path: '/editors-and-journals',
+          name: 'editorsAndJournals',
+          component: EditorsAndJournals
         },
         {
           path: '/forms',
