@@ -32,8 +32,8 @@
         <v-stepper-content step="2">
           <v-select
             label="Type Of Review"
-            v-model="typeOfReview"
-            :items="typeOfReviewOptions"
+            v-model="typeOfMap"
+            :items="typeOfMapOptions"
             :rules="[v => !!v || 'Item is required']"
             required
           ></v-select>
@@ -386,81 +386,14 @@
         </v-stepper-content>
 
         <v-stepper-step step="12" :complete="e6 > 12">
-          Potential Effect Modifiers/Reasons for Heterogeneity
-          <small>Provide a list of and justification for the effect modifiers /reasons for heterogeneity that will be considered in the review. Also provide details of how the list was compiled (including consultation of external experts). </small>
-        </v-stepper-step>
-        <v-stepper-content step="12">
-          <v-select
-            label="Potential Effect Modifiers/Reasons for Heterogeneity"
-            v-model="potentialEffectModifiersForHeterogeneity"
-            :items="checklistOptions"
-            :rules="[v => !!v || 'Item is required']"
-            required
-          ></v-select>
-          <v-btn color="primary" @click.native="e6 = 13">Continue</v-btn>
-          <v-btn flat>Cancel</v-btn>
-        </v-stepper-content>
-
-        <v-stepper-step step="13" :complete="e6 > 13">
           Data Synthesis and Presentation
         </v-stepper-step>
-        <v-stepper-content step="13">
-          <h3 class="display3">Type of Synthesis</h3>
-          <p>State the type of synthesis conducted as part of the systematic review (narrative only, narrative and quantitative, narrative and qualitative, narrative, qualitative and quantitative, narrative and mixed-methods).</p>
-          <v-form v-model="valid" ref="form" lazy-validation>
-            <v-text-field
-              label="Type of synthesis"
-              v-model="dataSynthesisAndPresentation.typeOfSynthesis"
-              :rules="[v => !!v || 'Item is required']"
-              required
-            ></v-text-field>
-          </v-form>
-
+        <v-stepper-content step="12">
           <h3 class="display3">Narrative Synthesis Strategy</h3>
           <p>Describe methods to be used for narratively synthesising the evidence base in the form of descriptive statistics, tables (including any map databases) and figures.</p>
           <v-select
             label="Narrative Synthesis Strategy"
             v-model="dataSynthesisAndPresentation.narrativeSynthesisStrategy"
-            :items="checklistOptions"
-            :rules="[v => !!v || 'Item is required']"
-            required
-          ></v-select>
-
-          <h3 class="display3">Quantitative Synthesis Strategy</h3>
-          <p>If data are appropriate for quantitative synthesis, describe planned methods for calculating effect sizes, methods for handling complex data, statistical methods for combining data from individual studies, and any planned exploration of heterogeneity (e.g. sensitivity analysis, subgroup analysis and meta-regression). If all studies may not be selected for synthesis explain criteria for selection (e.g. incomplete or missing information).</p>
-          <v-select
-            label="Quantitative Synthesis Strategy"
-            v-model="dataSynthesisAndPresentation.quantitativeSynthesisStrategy"
-            :items="checklistOptions"
-            :rules="[v => !!v || 'Item is required']"
-            required
-          ></v-select>
-
-          <h3 class="display3">Qualitative Synthesis Strategy</h3>
-          <p>Describe methods to be used for synthesising qualitative data and justify your methodological choice. Describe if and how you plan to analyse subgroups/subsets of data. If all studies may not be selected for synthesis explain criteria for selection (e.g. incomplete or missing information).</p>
-          <v-select
-            label="Qualitative Synthesis Strategy"
-            v-model="dataSynthesisAndPresentation.qualitativeSynthesisStrategy"
-            :items="checklistOptions"
-            :rules="[v => !!v || 'Item is required']"
-            required
-          ></v-select>
-
-          <h3 class="display3">Other Synthesis Strategies</h3>
-          <p>Describe any other approaches to be used for synthesising data or combining qualitative and quantitative synthesis (e.g. mixed-methods) and justify your methodological choice.</p>
-          <v-select
-            label="Other Synthesis Strategies"
-            v-model="dataSynthesisAndPresentation.otherSynthesisStrategy"
-            :items="checklistOptions"
-            :rules="[v => !!v || 'Item is required']"
-            required
-          ></v-select>
-
-          <h3 class="display3">Assessment of Risk of Publication bias</h3>
-          <p>Describe planned methods for examining the possible influence of publication bias on the synthesis.</p>
-          <v-select
-            label="Assessment of Risk of Publication bias"
-            v-model="dataSynthesisAndPresentation.assessmentOfRiskOfPublicationBias"
             :items="checklistOptions"
             :rules="[v => !!v || 'Item is required']"
             required
@@ -486,14 +419,14 @@
             required
           ></v-select>
 
-          <v-btn color="primary" @click.native="e6 = 14">Continue</v-btn>
+          <v-btn color="primary" @click.native="e6 = 13">Continue</v-btn>
           <v-btn flat>Cancel</v-btn>
         </v-stepper-content>
 
-        <v-stepper-step step="14" :complete="e6 > 14">
+        <v-stepper-step step="13" :complete="e6 > 13">
           Declarations
         </v-stepper-step>
-        <v-stepper-content step="14">
+        <v-stepper-content step="13">
           <h3 class="display3">Competing Interests</h3>
           <p>Describe of any financial or non-financial competing interests that the review authors may have. </p>
           <v-select
@@ -503,15 +436,15 @@
             :rules="[v => !!v || 'Item is required']"
             required
           ></v-select>
-          <v-btn color="primary" @click.native="e6 = 15">Continue</v-btn>
+          <v-btn color="primary" @click.native="e6 = 14">Continue</v-btn>
           <v-btn flat>Cancel</v-btn>
         </v-stepper-content>
 
-        <v-stepper-step step="15" :complete="e6 > 15">
+        <v-stepper-step step="14" :complete="e6 > 14">
           Submit Form
           <small>Already we will generate your .pdf report</small>
         </v-stepper-step>
-        <v-stepper-content step="15">
+        <v-stepper-content step="14">
           <v-btn
             @click="submit"
             :disabled="!valid"
@@ -529,7 +462,7 @@
   import download from 'downloadjs'
 
   export default {
-    name: 'SystematicReviewProtocol',
+    name: 'SystematicMapProtocol',
     data () {
       return {
         message: 'Hi Vue!',
@@ -540,7 +473,7 @@
           v => !!v || 'Title is required',
           v => (v && v.length <= 10) || 'Title must be less than 10 characters'
         ],
-        typeOfReview: null,
+        typeOfMap: null,
         authorsContracts: false,
         abstract: false,
         background: false,
@@ -577,25 +510,18 @@
           approachesToMissingData: '',
           consistencyChecking: ''
         },
-        potentialEffectModifiersForHeterogeneity: '',
         dataSynthesisAndPresentation: {
-          typeOfSynthesis: '',
           narrativeSynthesisStrategy: '',
-          quantitativeSynthesisStrategy: '',
-          qualitativeSynthesisStrategy: '',
-          otherSynthesisStrategy: '',
-          assessmentOfRiskOfPublicationBias: '',
           knowledgeGapAndClusterIdentificationStrategy: '',
           demonstratingProceduralIndependence: ''
         },
         declarations: {
           competingInterests: ''
         },
-        typeOfReviewOptions: [
-          'Systematic Review',
-          'Systematic Review Update',
-          'Systematic Review Amendment',
-          'Systematic Review from Systematic Map'
+        typeOfMapOptions: [
+          'Systematic Map',
+          'Systematic Map Update',
+          'Systematic Map Amendment'
         ],
         checklistOptions: [
           'Yes',
@@ -611,7 +537,7 @@
           // Native form submission is not yet supported
           const data = {
             title: this.title,
-            typeOfReview: this.typeOfReview,
+            typeOfMap: this.typeOfMap,
             authorsContracts: this.authorsContracts,
             background: this.background,
             stakeholderAgreement: this.stakeholderAgreement,
@@ -619,7 +545,6 @@
             searches: this.searches,
             articleScreeningAndStudyInclusionCriteria: this.articleScreeningAndStudyInclusionCriteria,
             dataExtraction: this.dataExtraction,
-            potentialEffectModifiersForHeterogeneity: this.potentialEffectModifiersForHeterogeneity,
             dataSynthesisAndPresentation: this.dataSynthesisAndPresentation
           }
           this.axios.post('http://127.0.0.1:5000/', data, {
