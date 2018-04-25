@@ -13,8 +13,7 @@
             <v-text-field
               label="Title"
               v-model="title"
-              :rules="titleRules"
-              :counter="10"
+              :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
           </v-form>
@@ -132,8 +131,7 @@
             <v-text-field
               label="Definitions of the Question Component"
               v-model="objectivesOfTheReview.definitionsOfTheQuestionComponent"
-              :rules="titleRules"
-              :counter="10"
+              :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
           </v-form>
@@ -148,7 +146,7 @@
           <h3 class="display3">Search strategy</h3>
           <p>Detail the planned search strategy to be used, including: database names accessed, institutional subscriptions (or date ranges subscribed for each database), search options (e.g. ‘topic words’ or ‘full text’ search facility), efforts to source grey literature, other sources of evidence (e.g. hand searching, calls for evidence/submission of evidence by stakeholders).</p>
           <v-select
-            label="searchStrategy"
+            label="Search Strategy"
             v-model="searches.searchStrategy"
             :items="checklistOptions"
             :rules="[v => !!v || 'Item is required']"
@@ -161,8 +159,7 @@
             <v-text-field
               label="Search String"
               v-model="searches.searchString"
-              :rules="titleRules"
-              :counter="10"
+              :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
           </v-form>
@@ -173,8 +170,7 @@
             <v-text-field
               label="Languages Bibliographic Databases"
               v-model="searches.languagesBibliographicDatabases"
-              :rules="titleRules"
-              :counter="10"
+              :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
           </v-form>
@@ -185,8 +181,7 @@
             <v-text-field
               label="Languages Grey Literature"
               v-model="searches.languagesGreyDatabases"
-              :rules="titleRules"
-              :counter="10"
+              :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
           </v-form>
@@ -197,8 +192,9 @@
             <v-text-field
               label="Bibliographic Databases"
               v-model="searches.bibliographicDatabases"
-              :rules="titleRules"
-              :counter="10"
+              mask="##"
+              placeholder="Type a two digits number"
+              :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
           </v-form>
@@ -209,8 +205,9 @@
             <v-text-field
               label="Web – Based Search Engines"
               v-model="searches.webSearchEngines"
-              :rules="titleRules"
-              :counter="10"
+              mask="##"
+              placeholder="Type a two digits number"
+              :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
           </v-form>
@@ -221,8 +218,9 @@
             <v-text-field
               label="Organisational Websites"
               v-model="searches.organisationalWebsites"
-              :rules="titleRules"
-              :counter="10"
+              mask="##"
+              placeholder="Type a two digits number"
+              :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
           </v-form>
@@ -411,8 +409,7 @@
             <v-text-field
               label="Type of synthesis"
               v-model="dataSynthesisAndPresentation.typeOfSynthesis"
-              :rules="titleRules"
-              :counter="10"
+              :rules="[v => !!v || 'Item is required']"
               required
             ></v-text-field>
           </v-form>
