@@ -2,14 +2,22 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import AppLayout from '../components/layout/AppLayout'
+import EditorsAndJournalsLayout from '../components/layout/EditorsAndJournalsLayout'
 import FormsLayout from '../components/layout/FormsLayout'
-import Home from '../components/pages/Home'
+
 import About from '../components/pages/About'
-import Forms from '../components/pages/Forms'
-import Publications from '../components/pages/Publications'
+import ContactUs from '../components/pages/ContactUs'
 import EditorsAndJournals from '../components/pages/EditorsAndJournals'
+import ExamplesOfUse from '../components/pages/ExamplesOfUse'
+import Forms from '../components/pages/Forms'
+import Home from '../components/pages/Home'
+import JournalsWhy from '../components/pages/JournalsWhy'
+import Publications from '../components/pages/Publications'
+import SaveResources from '../components/pages/SaveResources'
 import SystematicReviewProtocol from '../components/pages/SystematicReviewProtocol'
 import SystematicMapProtocol from '../components/pages/SystematicMapProtocol'
+import UpdatesAndExtensions from '../components/pages/UpdatesAndExtensions'
+import UsefulLinks from '../components/pages/UsefulLinks'
 
 Vue.use(Router)
 
@@ -37,8 +45,24 @@ export default new Router({
         },
         {
           path: '/editors-and-journals',
-          name: 'editorsAndJournals',
-          component: EditorsAndJournals
+          component: EditorsAndJournalsLayout,
+          children: [
+            {
+              path: '',
+              name: 'editorsAndJournals',
+              component: EditorsAndJournals
+            },
+            {
+              path: 'why-journals',
+              name: 'whyJournals',
+              component: JournalsWhy
+            },
+            {
+              path: 'save-resources',
+              name: 'saveResources',
+              component: SaveResources
+            }
+          ]
         },
         {
           path: '/forms',
@@ -60,8 +84,31 @@ export default new Router({
               component: SystematicMapProtocol
             }
           ]
+        },
+        {
+          path: '/useful-links',
+          name: 'usefulLinks',
+          component: UsefulLinks
+        },
+        {
+          path: '/updates-extensions',
+          name: 'updatesAndExtensions',
+          component: UpdatesAndExtensions
+        },
+        {
+          path: '/examples-of-use',
+          name: 'examplesOfUse',
+          component: ExamplesOfUse
+        },
+        {
+          path: '/contact-us',
+          name: 'contactUs',
+          component: ContactUs
         }
       ]
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
