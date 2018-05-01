@@ -68,3 +68,6 @@ app;
  * [Vuetify](https://vuetifyjs.com/)
  * [Axios](https://github.com/axios/axios)
  * [Material Icons](https://material.io/icons/)
+
+ This front-end application needs the [server application](https://github.com/ESHackathon/roses-pdf-generator) to
+ work fully. The server application is used to generate the PDF document from the given form information.
